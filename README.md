@@ -1,5 +1,5 @@
 # Solafune_Finding_Mining_Sites
-### Competition hosted on [Solafune]()
+### Competition hosted on [Solafune](https://solafune.com/competitions/58406cd6-c3bb-4f7a-85c7-c5a1ad67ca03?menu=about&tab=&modal=%22%22&topicId=7a2f801e-6e05-455e-b9a7-74755503423a)
 ### Overview
 Mineral resources are used in various fields, from daily necessities to cutting-edge technology, and have become an indispensable element for the development of modern society. Particularly in Africa and Southeast Asia, these mineral resources are abundant and contribute to economic growth and trade expansion as major exports in many African and Southeast Asian countries. On the other hand, these countries face issues, such as the inability to properly monitor mine development, often resulting from a lack of their resources.
 
@@ -49,20 +49,20 @@ The notebook for exploratory data analysis is available on Kaggle.[![Open in Kag
      * VerticalFlip
      * SafeRotate
      * CoarseDropout
- * WeightedRandomSampler used in training dataset data loader with the batch size 4
+ * Used WeightedRandomSampler in the training dataset data loader with a batch size of 4.
 ### Model
- * All 12 bands used for training.
- * Trained maxvit_tiny_tf_512 model on five-fold training data with above-listed augmentations. Ten epochs were used to train the five-fold dataset, and early stopping was implemented to control overfitting by monitoring the validation log loss.
+ * Utilized all 12 bands for training.
+ * Trained the maxvit_tiny_tf_512 model on the five-fold training data with the listed augmentations. Ten epochs were used for training the five-fold dataset, and early stopping was implemented to control overfitting by monitoring the validation log loss.
  * Model parameters
    * Loss: CrossEntropyLoss with weight
    * Optimizer: AdamW
    * Learning rate: 1e-4
    * Weight decay: 1e-2
    * LR scheduler: CosineAnnealingLR
- * Post-training, selected the lowest validation loss fold model and found an optimal threshold for class.
- * The test data was predicted using the five-fold model, and test-time augmentation was applied to ensure confident predictions.
- * The test image prediction steps,
-   * For each image get the result from the five-fold model and test time augmentation applied 5 times. So the final number of predicted probabilities for a single image is 25.
-   * Take the mean of 25 predictions and then apply an optimal threshold to find the final result class.
- * The model's performance was tracked using WANDB.
+ * Post-training, select the model with the lowest validation loss fold and found an optimal threshold for classification.
+ * Predicted the test data using the five-fold model, applying test-time augmentation to ensure confident predictions.
+ * Steps for test image prediction:
+   * For each image, obtained results from the five-fold model, applying test-time augmentation 5 times. Thus, the final number of predicted probabilities for a single image is 25.
+   * Calculated the mean of the 25 predictions and then applied an optimal threshold to determine the final result class.
+ * Tracked the model's performance using WANDB.
 
