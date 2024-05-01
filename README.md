@@ -69,3 +69,4 @@ The notebook for exploratory data analysis is available on Kaggle.[![Open in Kag
  * Tracked the model's performance using [WANDB](https://wandb.ai/hari141v/Solafune_Finding_Mining_Sites_maxvit_tiny_tf_512_in1k_12ch_removed_low_entr_img/overview?nw=nwuserhari141v).
  * [Five fold training results](https://github.com/hariprasath-v/Solafune_Finding_Mining_Sites/blob/main/maxvit_tiny_tf_512_in1k_5_fold_eval_results_ch12_low_entr_img_removed.csv)
 
+# Final Competiton Rank: 37/169 | Score: 0.914611005693
