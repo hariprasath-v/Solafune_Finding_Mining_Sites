@@ -49,10 +49,16 @@ The notebook for exploratory data analysis is available on Kaggle.[![Open in Kag
      * VerticalFlip
      * SafeRotate
      * CoarseDropout
- * WeightedRandomSampler used in training dataset data loader
+ * WeightedRandomSampler used in training dataset data loader with the batch size 4
 ### Model
  * All 12 bands used for training.
  * Trained maxvit_tiny_tf_512 model on five-fold training data with above-listed augmentations. Ten epochs were used to train the five-fold dataset, and early stopping was implemented to control overfitting by monitoring the validation log loss.
+ * Model parameters
+   * Loss: CrossEntropyLoss with weight
+   * Optimizer: AdamW
+   * Learning rate: 1e-4
+   * Weight decay: 1e-2
+   * LR scheduler: CosineAnnealingLR
  * Post-training, selected the lowest validation loss fold model and found an optimal threshold for class.
  * The test data was predicted using the five-fold model, and test-time augmentation was applied to ensure confident predictions.
  * The test image prediction steps,
