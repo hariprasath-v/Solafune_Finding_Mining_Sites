@@ -15,6 +15,8 @@ For more information, please visit [this site](https://developers.google.com/ear
 
 The images have been processed to mask clouds for Sentinel-2 images from 2022/1/1 to 2023/12/31, and the median of all images is used as the image for that location.
 
+#### Evaluation metric is F1 score
+
 ### My Approach
 ### Exploratory Data Analysis
   * Target class distribution analysis.
