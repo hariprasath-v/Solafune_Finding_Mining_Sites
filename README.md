@@ -59,10 +59,11 @@ The notebook for exploratory data analysis is available on Kaggle.[![Open in Kag
    * Learning rate: 1e-4
    * Weight decay: 1e-2
    * LR scheduler: CosineAnnealingLR
- * Post-training, select the model with the lowest validation loss fold and found an optimal threshold for classification.
+ * Post-training, select the model with the lowest validation loss and found an optimal threshold for classification.
  * Predicted the test data using the five-fold model, applying test-time augmentation to ensure confident predictions.
  * Steps for test image prediction:
    * For each image, obtained results from the five-fold model, applying test-time augmentation 5 times. Thus, the final number of predicted probabilities for a single image is 25.
    * Calculated the mean of the 25 predictions and then applied an optimal threshold to determine the final result class.
- * Tracked the model's performance using WANDB.
+ * Tracked the model's performance using [WANDB](https://wandb.ai/hari141v/Solafune_Finding_Mining_Sites_maxvit_tiny_tf_512_in1k_12ch_removed_low_entr_img/overview?nw=nwuserhari141v).
+ * [Five fold training results](https://github.com/hariprasath-v/Solafune_Finding_Mining_Sites/blob/main/maxvit_tiny_tf_512_in1k_5_fold_eval_results_ch12_low_entr_img_removed.csv)
 
